@@ -6,5 +6,8 @@
 package io.github.sodhipinky.service;
 
 public class MusicPlayer {
-
+    public void play() {
+        //1. path of the song file to be played
+        String songPath = "src/main/resources/Wakanda Origins.wav";
+    }
 }
