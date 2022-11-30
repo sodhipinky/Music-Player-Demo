@@ -18,8 +18,12 @@ public class MusicPlayer {
         //3. create an object of AudioInputStream class
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(songFile);
+
             //4. get a clip object from the AudioSystem
             Clip clip = AudioSystem.getClip();
+
+            //5. open the clip and load the audio input stream
+            clip.open(audioInputStream);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException exception) {
             exception.printStackTrace();
         }
