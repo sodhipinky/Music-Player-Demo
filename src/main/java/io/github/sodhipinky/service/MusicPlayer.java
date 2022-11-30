@@ -5,9 +5,7 @@
  */
 package io.github.sodhipinky.service;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -20,7 +18,9 @@ public class MusicPlayer {
         //3. create an object of AudioInputStream class
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(songFile);
-        } catch (UnsupportedAudioFileException | IOException exception) {
+            //4. get a clip object from the AudioSystem
+            Clip clip = AudioSystem.getClip();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException exception) {
             exception.printStackTrace();
         }
     }
