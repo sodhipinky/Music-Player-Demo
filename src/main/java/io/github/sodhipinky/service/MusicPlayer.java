@@ -24,6 +24,9 @@ public class MusicPlayer {
 
             //5. open the clip and load the audio input stream
             clip.open(audioInputStream);
+
+            //6. set a loop for the sound file
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException exception) {
             exception.printStackTrace();
         }
