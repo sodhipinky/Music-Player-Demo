@@ -27,8 +27,19 @@ public class MusicPlayer {
 
             //6. set a loop for the sound file
             clip.loop(Clip.LOOP_CONTINUOUSLY);
+
+            //7. start the clip
+            clip.start();
+
+            //8. get the exact length of the song
+            long songLength = clip.getMicrosecondLength() / 1000L;
+
+            //9. Pause the current thread for the time the song is playing
+            Thread.sleep(songLength);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException exception) {
             exception.printStackTrace();
+        } catch (InterruptedException exception) {
+            System.err.println("The song was interrupted in between");
         }
     }
 }
